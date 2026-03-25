@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://pmt13y54ku2i"]
+[gd_scene format=3 uid="uid://pmt13y54ku2i"]
 
 [ext_resource type="Script" uid="uid://5hm8uajiiwr1" path="res://global elements/scene transition/scene_transition.gd" id="1_3kwi4"]
 [ext_resource type="Shader" uid="uid://dj67604r3j0l5" path="res://global elements/scene transition/diamond_transition.gdshader" id="1_72rmr"]
@@ -102,11 +102,11 @@ _data = {
 &"fadeOut": SubResource("Animation_60od4")
 }
 
-[node name="sceneTransition" type="CanvasLayer"]
+[node name="sceneTransition" type="CanvasLayer" unique_id=1588657928]
 follow_viewport_scale = 100.0
 script = ExtResource("1_3kwi4")
 
-[node name="transitionShader" type="ColorRect" parent="."]
+[node name="transitionShader" type="ColorRect" parent="." unique_id=74849440]
 material = SubResource("ShaderMaterial_clnkt")
 anchors_preset = 15
 anchor_right = 1.0
@@ -117,7 +117,5 @@ mouse_filter = 2
 color = Color(0.27451, 0.580392, 0.658824, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="transitionPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_3htsy")
-}
+[node name="transitionPlayer" type="AnimationPlayer" parent="." unique_id=67458370]
+libraries/ = SubResource("AnimationLibrary_3htsy")

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=108 format=3 uid="uid://bord65n4suwnl"]
+[gd_resource type="TileSet" format=3 uid="uid://bord65n4suwnl"]
 
 [ext_resource type="Texture2D" uid="uid://u18jdahn5hqs" path="res://levels/Tilesets/colliding tiles/greentileset_slopes_ver.png" id="1_eebbh"]
 [ext_resource type="Texture2D" uid="uid://dthx21daup7ju" path="res://levels/Tilesets/colliding tiles/greentileset.png" id="2_bntfb"]

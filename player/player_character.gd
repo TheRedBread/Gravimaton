@@ -70,7 +70,6 @@ enum PlayerState {
 	DASHING,
 	FALLING,
 	FLYING,
-	
 }
 
 
@@ -104,8 +103,23 @@ func _ready() -> void:
 	current_acceleration = ACCELERATION
 	current_max_speed = MAX_SPEED
 	spawn_gravity = GameManager.gravity_direction
-	spawn = position
 	
+	var door = GameSaveSystem.target_door_id
+	if (door == -1):
+		spawn = GameSaveSystem.spawn_position
+		position = spawn
+	else:
+		for d in get_tree().get_nodes_in_group("doors"):
+			if d.door_id == door:
+				GameSaveSystem.target_door_id = door
+				print("teleported to doors with id: ", door)
+				position = d.position
+				spawn = d.position
+				GameSaveSystem.spawn_position = d.position
+				GameSaveSystem.target_door_id = -1
+	
+	print(GameSaveSystem.spawn_position)
+	GameSaveSystem.save_game()
 	up_direction = Vector2(0, -GameManager.gravity_direction)
 
 
@@ -674,11 +688,12 @@ func count_time_on_ground(delta):
 	else:
 		time_on_ground = 0
 
-func set_spawnpoint():
+func set_spawnpoint(spawn_position):
 	AudioManager.play_sound(SPAWNPOINT_CHECKED, -20, 0.02, 2, 0.1, "Sound effects")
-	GameSaveSystem.spawn_checked_count += 1
-	spawn = position
+	spawn = spawn_position
 	spawn_gravity = GameManager.gravity_direction
+	GameSaveSystem.spawn_position = spawn
+	GameSaveSystem.save_game()
 
 func spawn_limbs():
 	var limbs = DEATH_PARTICLES.instantiate()
@@ -724,7 +739,7 @@ func die():
 	player_controls = true
 	player_sprite.visible = true
 	eye_sprite.visible = true
-	
+	GameSaveSystem.death_count += 1
 	up_direction = Vector2(0, -GameManager.gravity_direction)
 
 
@@ -783,26 +798,19 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	handle_box_pushing()
+	
 
 
+func _on_spawnpoint_detection_area_entered(area: Area2D) -> void:
+	print("spawnpoint entered")
+	set_spawnpoint(area.get_parent().position)
 
-func _on_death_detection_body_entered(_body: Node2D) -> void:
-	print("player enters death body")
-	die()
 
-func _on_death_detection_area_entered(_area: Area2D) -> void:
+func _on_death_detection_area_entered(area: Area2D) -> void:
 	print("player enters death area")
 	die()
 
-func _on_spawnpoint_detection_body_entered(_body: Node2D) -> void:
-	set_spawnpoint()
-	var checkpoint_particles = CHECKPOINT_PARTICLES.instantiate()
-	checkpoint_particles.get_child(0).emitting = true
-	checkpoint_particles.get_child(0).gravity = Vector2(0, 60 * GameManager.gravity_direction)
-	
-	checkpoint_particles.position = position + Vector2(0, -5 * GameManager.gravity_direction)
-	if GameManager.gravity_direction == 1:
-		checkpoint_particles.position = position + Vector2(0, -30 * GameManager.gravity_direction)
-		
-	
-	get_parent().add_child(checkpoint_particles)
+
+func _on_death_detection_body_entered(body: Node2D) -> void:
+	print("player enters death body")
+	die()

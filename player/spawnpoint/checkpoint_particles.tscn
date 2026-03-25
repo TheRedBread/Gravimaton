@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxvi00tbv0cyu"]
+[gd_scene format=3 uid="uid://dxvi00tbv0cyu"]
 
 [ext_resource type="Script" uid="uid://ckup1k8gxd2k0" path="res://player/spawnpoint/checkpoint_particles.gd" id="1_36gno"]
 [ext_resource type="Texture2D" uid="uid://u6qmweecu0od" path="res://player/spawnpoint/flag.png" id="2_wptfc"]
@@ -12,10 +12,12 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 offsets = PackedFloat32Array(0, 0.387821, 0.74359, 0.887821, 1)
 colors = PackedColorArray(0.160784, 0.407843, 0.290196, 1, 0.215686, 0.588235, 0.282353, 1, 0.47451, 0.709804, 0.278431, 1, 0.721569, 0.811765, 0.380392, 1, 0.952941, 0.858824, 0.435294, 1)
 
-[node name="checkpointParticles" type="Node2D"]
+[node name="checkpointParticles" type="Node2D" unique_id=793341113]
+z_index = 100
 script = ExtResource("1_36gno")
 
-[node name="particles" type="CPUParticles2D" parent="."]
+[node name="particles" type="CPUParticles2D" parent="." unique_id=482704996]
+z_index = 3
 emitting = false
 amount = 50
 texture = ExtResource("2_wptfc")

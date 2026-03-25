@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=42 format=3 uid="uid://m54yaiaqs6ll"]
+[gd_resource type="Theme" format=3 uid="uid://m54yaiaqs6ll"]
 
 [ext_resource type="FontFile" uid="uid://x8xpsunusqmx" path="res://UI/fonts/monogram.ttf" id="1_6cqq2"]
 [ext_resource type="Texture2D" uid="uid://wqyd8vy4pdu1" path="res://UI/UIElements/panels/BlueGlassy/glassyplainPanel_rounded_lighter.png" id="2_13t8b"]

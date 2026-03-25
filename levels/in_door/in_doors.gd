@@ -11,8 +11,8 @@ func get_in():
 		print("doors entered to: ", door_level)
 		is_player_in_area = false
 		
-		SceneTransition.change_scene(door_level, "Blue1", 0)
-		
+		SceneTransition.change_scene(door_level, "Blue1")
+		GameSaveSystem.target_door_id = 0
 		
 	else:
 		print("couldn't load scene: ", door_level)

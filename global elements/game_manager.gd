@@ -8,7 +8,7 @@ const BASIC_POST_PROCESS = preload("res://global elements/basic_post_process.tsc
 
 func load_last_save():
 	GameSaveSystem.load_game()
-	SceneTransition.change_scene(GameSaveSystem.current_level, "Blue1", GameSaveSystem.current_door)
+	SceneTransition.change_scene(GameSaveSystem.current_level, "Blue1")
 
 func close_game():
 	get_tree().quit()

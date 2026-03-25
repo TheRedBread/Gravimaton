@@ -9,8 +9,11 @@ extends Node2D
 func _ready() -> void:
 	if direction == -1:
 		bubbles_animated_sprite.flip_h = true
+		robot_sprite.flip_h = true
 	else:
 		bubbles_animated_sprite.flip_h = false
+		robot_sprite.flip_h = false
+		
 	
 	if robot_variation == -1:
 		robot_sprite.frame = randi_range(0, 9)

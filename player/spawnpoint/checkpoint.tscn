@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cn14goc8fyxdn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8e0np"]
+radius = 52.0
+
+[node name="Checkpoint" type="Node2D" unique_id=1699783358]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1321675045]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=290763313]
+position = Vector2(0, -44)
+shape = SubResource("CircleShape2D_8e0np")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cnpisc0ppc6qp"]
+[gd_scene format=3 uid="uid://cnpisc0ppc6qp"]
 
 [ext_resource type="Script" uid="uid://c02eddk36m51" path="res://player/player_character.gd" id="1_c2kd2"]
 [ext_resource type="Script" uid="uid://bbjrrqys0dutu" path="res://player/player_camera.gd" id="2_yxov5"]
@@ -16,8 +16,8 @@
 size = Vector2(9.92014, 22)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f2j5l"]
-radius = 3.96806
-height = 19.8403
+radius = 4.9600716
+height = 22.0
 
 [sub_resource type="Animation" id="Animation_i5e0n"]
 resource_name = "Idle"
@@ -692,7 +692,7 @@ _data = {
 &"dash": SubResource("Animation_qep63")
 }
 
-[node name="PlayerCharacter" type="CharacterBody2D" groups=["player"]]
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=888648625 groups=["player"]]
 z_index = 1
 position = Vector2(0, 1)
 scale = Vector2(1.00805, 1)
@@ -703,49 +703,46 @@ floor_max_angle = 1.309
 floor_snap_length = 10.0
 script = ExtResource("1_c2kd2")
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=1244971315]
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_2ywmw")
 
-[node name="SpawnpointDetection" type="Area2D" parent="."]
-visible = false
+[node name="SpawnpointDetection" type="Area2D" parent="." unique_id=2013254466]
 collision_layer = 0
 collision_mask = 8
 
-[node name="SpawnpointDetectionCollision" type="CollisionShape2D" parent="SpawnpointDetection"]
+[node name="SpawnpointDetectionCollision" type="CollisionShape2D" parent="SpawnpointDetection" unique_id=1383592374]
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_f2j5l")
 
-[node name="DeathDetection" type="Area2D" parent="."]
+[node name="DeathDetection" type="Area2D" parent="." unique_id=1340910120]
 collision_layer = 0
 collision_mask = 4
 
-[node name="DeathDetectionCollision" type="CollisionShape2D" parent="DeathDetection"]
+[node name="DeathDetectionCollision" type="CollisionShape2D" parent="DeathDetection" unique_id=1148385777]
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_f2j5l")
 
-[node name="PlayerCamera" type="Camera2D" parent="."]
+[node name="PlayerCamera" type="Camera2D" parent="." unique_id=310038876]
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 script = ExtResource("2_yxov5")
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=775971934]
 process_mode = 3
 
-[node name="PauseMenu" parent="HUD" instance=ExtResource("3_lwsbi")]
+[node name="PauseMenu" parent="HUD" unique_id=961414017 instance=ExtResource("3_lwsbi")]
 process_mode = 3
 
-[node name="DashTimer" type="Timer" parent="."]
+[node name="DashTimer" type="Timer" parent="." unique_id=664858720]
 process_callback = 0
 wait_time = 0.2
 one_shot = true
 
-[node name="PlayerSpriteAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ce6h6")
-}
+[node name="PlayerSpriteAnimation" type="AnimationPlayer" parent="." unique_id=1806729045]
+libraries/ = SubResource("AnimationLibrary_ce6h6")
 
-[node name="playerSprite" type="Sprite2D" parent="."]
+[node name="playerSprite" type="Sprite2D" parent="." unique_id=78575162]
 material = SubResource("ShaderMaterial_3d672")
 position = Vector2(0, -12)
 texture = ExtResource("9_vx43m")
@@ -753,7 +750,7 @@ offset = Vector2(0, -4)
 hframes = 8
 vframes = 6
 
-[node name="playerEyeSprite" type="Sprite2D" parent="."]
+[node name="playerEyeSprite" type="Sprite2D" parent="." unique_id=788235662]
 material = SubResource("CanvasItemMaterial_qep63")
 position = Vector2(0, -12)
 texture = ExtResource("5_w3pip")
@@ -761,43 +758,43 @@ offset = Vector2(0, -4)
 hframes = 8
 vframes = 6
 
-[node name="playerStarsParallax" type="ParallaxBackground" parent="."]
+[node name="playerStarsParallax" type="ParallaxBackground" parent="." unique_id=499689314]
 layer = -2
 script = ExtResource("6_85wnx")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="playerStarsParallax"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="playerStarsParallax" unique_id=71521104]
 z_index = -2
 motion_scale = Vector2(0.01, 0.01)
 motion_mirroring = Vector2(480, 270)
 
-[node name="Sprite2D" type="Sprite2D" parent="playerStarsParallax/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="playerStarsParallax/ParallaxLayer" unique_id=1464535634]
 position = Vector2(240, 135)
 texture = ExtResource("6_msyva")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="playerStarsParallax"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="playerStarsParallax" unique_id=1124391795]
 z_index = -2
 motion_scale = Vector2(0.02, 0.02)
 motion_mirroring = Vector2(480, 270)
 
-[node name="Sprite2D" type="Sprite2D" parent="playerStarsParallax/ParallaxLayer2"]
+[node name="Sprite2D" type="Sprite2D" parent="playerStarsParallax/ParallaxLayer2" unique_id=364176114]
 position = Vector2(240, 135)
 texture = ExtResource("7_ukj1r")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="playerStarsParallax"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="playerStarsParallax" unique_id=943251430]
 z_index = -2
 motion_scale = Vector2(0.05, 0.05)
 motion_mirroring = Vector2(480, 270)
 
-[node name="Sprite2D" type="Sprite2D" parent="playerStarsParallax/ParallaxLayer3"]
+[node name="Sprite2D" type="Sprite2D" parent="playerStarsParallax/ParallaxLayer3" unique_id=1900552703]
 position = Vector2(240, 135)
 texture = ExtResource("8_qmn1e")
 
-[node name="SlideAudioPlayer" type="AudioStreamPlayer" parent="."]
+[node name="SlideAudioPlayer" type="AudioStreamPlayer" parent="." unique_id=836399897]
 stream = ExtResource("10_oggeb")
 bus = &"Sound effects"
 parameters/looping = true
 
-[node name="SlidingParticles" type="CPUParticles2D" parent="."]
+[node name="SlidingParticles" type="CPUParticles2D" parent="." unique_id=2010248485]
 position = Vector2(0, -7)
 amount = 25
 lifetime = 0.2
@@ -812,8 +809,7 @@ initial_velocity_min = 50.0
 initial_velocity_max = 100.0
 scale_amount_max = 2.0
 
-[node name="JumpingParticles" type="CPUParticles2D" parent="."]
-visible = false
+[node name="JumpingParticles" type="CPUParticles2D" parent="." unique_id=377747513]
 position = Vector2(0, -5)
 emitting = false
 amount = 20
@@ -831,7 +827,7 @@ initial_velocity_min = 30.0
 initial_velocity_max = 50.0
 scale_amount_max = 2.0
 
-[node name="LandingParticles" type="CPUParticles2D" parent="."]
+[node name="LandingParticles" type="CPUParticles2D" parent="." unique_id=1522910637]
 position = Vector2(0, -1)
 emitting = false
 amount = 20
@@ -849,26 +845,25 @@ initial_velocity_min = 20.0
 initial_velocity_max = 40.0
 scale_amount_max = 2.0
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=537550182]
 position = Vector2(-111.722, -9)
 energy = 0.8
 blend_mode = 1
 max_distance = 5000.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1386390521]
 environment = SubResource("Environment_wi17q")
 
-[node name="WhitenAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_l18q3")
-}
+[node name="WhitenAnimation" type="AnimationPlayer" parent="." unique_id=520538770]
+libraries/ = SubResource("AnimationLibrary_l18q3")
 
-[node name="ControlsDelayTimer" type="Timer" parent="."]
+[node name="ControlsDelayTimer" type="Timer" parent="." unique_id=178688439]
 unique_name_in_owner = true
 wait_time = 0.8
 one_shot = true
 autostart = true
 
+[connection signal="area_entered" from="SpawnpointDetection" to="." method="_on_spawnpoint_detection_area_entered"]
 [connection signal="body_entered" from="SpawnpointDetection" to="." method="_on_spawnpoint_detection_body_entered"]
 [connection signal="area_entered" from="DeathDetection" to="." method="_on_death_detection_area_entered"]
 [connection signal="body_entered" from="DeathDetection" to="." method="_on_death_detection_body_entered"]

@@ -13,7 +13,8 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if door_level:
 		print("doors entered to: ", door_level)
-		SceneTransition.change_scene(door_level, "Blue1", door_target_id)
+		SceneTransition.change_scene(door_level, "Blue1")
+		GameSaveSystem.target_door_id = door_target_id
 	else:
 		print("couldn't load scene: ", door_level)
 	

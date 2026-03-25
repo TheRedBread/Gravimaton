@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://j6hsrc2ou8a5"]
+[gd_scene format=3 uid="uid://j6hsrc2ou8a5"]
 
 [ext_resource type="Script" uid="uid://dc42ljie2qtfi" path="res://levels/Tilesets/decorations/pod/pod.gd" id="1_rn6gp"]
 [ext_resource type="Texture2D" uid="uid://bhugvulmkdekq" path="res://levels/Tilesets/decorations/pod/glass_pod.png" id="1_t4uf3"]
@@ -300,25 +300,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="pod" type="Node2D"]
+[node name="pod" type="Node2D" unique_id=1518839048]
 script = ExtResource("1_rn6gp")
 
-[node name="pod" type="Sprite2D" parent="."]
+[node name="pod" type="Sprite2D" parent="." unique_id=796765908]
 position = Vector2(8, -24)
 texture = ExtResource("1_t4uf3")
 
-[node name="robotSprite" type="Sprite2D" parent="."]
+[node name="robotSprite" type="Sprite2D" parent="." unique_id=1770849458]
 position = Vector2(8, -24)
 texture = ExtResource("4_swshi")
 hframes = 4
 vframes = 4
 
-[node name="bubblesAnimatedSprite" type="AnimatedSprite2D" parent="."]
+[node name="bubblesAnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1855014422]
 position = Vector2(8, -24)
 sprite_frames = SubResource("SpriteFrames_tofd3")
 autoplay = "default"
 frame_progress = 0.223987
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1039979579]
 position = Vector2(8, -22)
 scale = Vector2(2, 3.6)

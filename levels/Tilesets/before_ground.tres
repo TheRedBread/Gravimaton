@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bgmveoo87hwgl"]
+[gd_resource type="TileSet" format=3 uid="uid://bgmveoo87hwgl"]
 
 [ext_resource type="Texture2D" uid="uid://b3shcf418i0lt" path="res://levels/Tilesets/rack.png" id="1_nxlac"]
 [ext_resource type="Texture2D" uid="uid://croevaln3bjx4" path="res://levels/power/power_cable.png" id="2_rfud2"]
