@@ -693,6 +693,7 @@ _data = {
 }
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=888648625 groups=["player"]]
+visible = false
 z_index = 1
 position = Vector2(0, 1)
 scale = Vector2(1.00805, 1)

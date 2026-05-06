@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://s4ih775jn65d"]
+[gd_scene format=3 uid="uid://s4ih775jn65d"]
 
 [ext_resource type="Script" uid="uid://cw0lmfs0ypruh" path="res://music/music_manager.gd" id="1_74tc1"]
 
@@ -56,14 +56,13 @@ _data = {
 &"fade_out": SubResource("Animation_wi8mw")
 }
 
-[node name="MusicManager" type="Node"]
+[node name="MusicManager" type="Node" unique_id=1024753915]
 process_mode = 3
 script = ExtResource("1_74tc1")
 
-[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=519096464]
 volume_db = -80.0
+bus = &"Music"
 
-[node name="FadeMusic" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_msj2g")
-}
+[node name="FadeMusic" type="AnimationPlayer" parent="." unique_id=1761543998]
+libraries/ = SubResource("AnimationLibrary_msj2g")

@@ -2923,7 +2923,7 @@ offset_right = 55.0
 offset_bottom = 8.0
 theme_override_colors/font_color = Color(0.352941, 0.772549, 0.807843, 1)
 theme_override_fonts/font = ExtResource("38_b1cs7")
-text = "Use Shift to dash"
+text = "Use Shift (or RT) to dash"
 horizontal_alignment = 1
 
 [node name="CableRoom" type="Node2D" parent="." unique_id=852932689]
@@ -3017,7 +3017,7 @@ offset_right = 52.0
 offset_bottom = 8.0
 theme_override_colors/font_color = Color(0.352941, 0.772549, 0.807843, 1)
 theme_override_fonts/font = ExtResource("38_b1cs7")
-text = "Use Ctrl to slide"
+text = "Use Ctrl (or LT) to slide"
 horizontal_alignment = 1
 
 [node name="isPowerOn" parent="." unique_id=1082302041 node_paths=PackedStringArray("power_supply1", "power_supply2") instance=ExtResource("39_b1cs7")]

@@ -29,5 +29,5 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	
-	position.x = lerp(position.x, (get_camera_desired_position1().x+get_camera_desired_position3().x)/2, delta*60 * camera_desired_position_lerp)
+	position.x = lerp(position.x, (get_camera_desired_position1().x+get_camera_desired_position3().x)/4, delta*60 * camera_desired_position_lerp)
 	position.y = lerp(position.y, GameManager.gravity_direction*-25.0, 0.06)

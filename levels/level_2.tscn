@@ -2757,8 +2757,6 @@ offset_top = -40.0
 offset_right = 96.0
 offset_bottom = -11.0
 theme_override_fonts/font = ExtResource("28_cp3aq")
-text = "Watch out!
-These plates are hot"
 horizontal_alignment = 1
 
 [node name="AirSwitchHider" parent="." unique_id=1272868739 instance=ExtResource("27_amxoe")]

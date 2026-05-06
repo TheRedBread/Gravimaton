@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cx58b4d7u32at"]
+[gd_scene format=3 uid="uid://cx58b4d7u32at"]
 
 [ext_resource type="Script" uid="uid://bf5nksqkut8tk" path="res://levels/power/doors/doors.gd" id="1_g5rw1"]
 [ext_resource type="Texture2D" uid="uid://dyx527ch5i6dd" path="res://levels/Tilesets/colliding tiles/door_closing-Sheet.png" id="2_75tly"]
@@ -8,32 +8,31 @@
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 63, 15, 63, 15, 64, 1, 64, 1, 63, 0, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75tly"]
-size = Vector2(16, 63)
+size = Vector2(12, 62)
 
-[node name="Doors" type="AnimatableBody2D"]
+[node name="Doors" type="AnimatableBody2D" unique_id=2068887655]
 collision_mask = 0
 script = ExtResource("1_g5rw1")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1414555571]
 position = Vector2(-8, -32)
 polygon = PackedVector2Array(0, 0, 16, 0, 16, 64, 0, 64)
 
-[node name="DoorSprite" type="Sprite2D" parent="."]
+[node name="DoorSprite" type="Sprite2D" parent="." unique_id=714596293]
 z_index = -1
 texture = ExtResource("2_75tly")
 hframes = 6
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=658450082]
 position = Vector2(-8, -32)
 occluder = SubResource("OccluderPolygon2D_8cykf")
 
-[node name="crashDetector" type="Area2D" parent="."]
+[node name="crashDetector" type="Area2D" parent="." unique_id=912424736]
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="crashDetector"]
-position = Vector2(0, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crashDetector" unique_id=953996683]
 shape = SubResource("RectangleShape2D_75tly")
 
-[node name="compressAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="compressAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=943520778]
 stream = ExtResource("3_jihin")
