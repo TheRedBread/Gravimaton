@@ -4,7 +4,7 @@ This is a platformer game where you can switch gravity
 
 ## Installation
 
-go to Exports Folder and chose your version, download the folder you want and run gravity_game_prototypeVX.Y.Z.exe
+Play it here: https://redbread-official.itch.io/gravimaton
 
 ## Usage
 
